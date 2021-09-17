@@ -1,0 +1,40 @@
+{% extends 'ecommerce_app/base.html' %}
+{% load static%}
+
+{% block load_local_css%}
+    <link rel='stylesheet' href='{% static "ecommerce_app/checkout.css" %}'>
+{%endblock%}
+
+{% block title %}
+    سفارش |
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+
+            <h2>فرم سفارش</h2>
+
+            {% for message in messages %}
+                <h2>{{ message }}</h2>
+            {% endfor %}
+
+            <table>
+                <form action="" method="post">
+    
+                    {% csrf_token %}
+                    
+                    <tr>
+                        {{ form.as_table }}
+                        <td></td>
+                        <td><input type="submit" value="ثبت سفارش" id="enter_order"></td>
+                    </tr>
+                
+                </form>
+            <table>
+            
+        </div>
+    </div>
+
+{% endblock %}

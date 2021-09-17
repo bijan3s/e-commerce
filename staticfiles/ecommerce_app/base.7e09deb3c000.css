@@ -1,0 +1,102 @@
+@font-face {
+  font-family:B_Nazanin ;
+  src: url("fonts/B-NAZANIN.fe70eb00cc03.ttf");
+}
+input{
+  font-size: 18px;
+}
+
+form{
+  font-size: 18px;
+}
+#first_page{
+  margin-top:0%;
+  font-size: 36px;
+  margin-left: 85%;
+  padding-top: 2%;
+  transform: rotate(7deg);
+}
+#first_page:a{
+  text-align: center;
+}
+#header a:link ,#header a:visited{
+  background-color: #5e2e207a;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  transition: transform 0.3s;
+}
+#header a:hover,#header a:active {
+  
+  background-color: #64352773;
+  transform: scale(1.05);
+}
+#header{
+  background-image: url(/media/bg/header.jpg);
+  background-repeat: no-repeat;
+  background-color: rgb(255, 85, 18);
+}
+#cart{
+  text-align:left;
+  padding-left: 2%;
+  font-size: 24px;
+  margin-bottom: -2%;
+}
+#head_name{
+  margin-top: -3%;
+  color:rgb(241, 236, 236);
+  font-size:48px;
+  
+  border:rgb(226, 217, 217) solid;
+  margin-left: 35%;
+  margin-right: 35%;
+  border-radius: 10px;
+  text-align: center;
+}
+body{
+  font-family:B_Nazanin;
+  font-size:larger;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+img {  
+  width: 200px; 
+  height:auto;
+  border-radius: 20px;
+  }  
+
+
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+}
+
+#footer{
+  text-align: right;
+  margin-top:5%;
+  background-image: url(/media/bg/footer.png);
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: 10cm;
+  padding-right: 5%;
+  border: black solid;
+  border-radius: 20px;
+}
+#footer a{
+  background-color:rgba(255, 0, 0, 0);
+}
+#icon{
+  width: 50px; 
+  height:auto;
+}
+
+input[type=text] {
+  border-radius: 4px;
+  background-color: #f2f5f7;
+}
+

@@ -1,0 +1,68 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="در این فروشگاه اینترنتی شما می توانید به خرید شکلات بپردازید">
+    <meta name="keywords" content="ecommerce, فروشگاه, شکلات">
+    
+    <title>{% block title %}{% endblock %} فروشگاه اینترنتی </title>
+    {% block load_css%}
+    <link rel='stylesheet' href='{% static "ecommerce_app/base.css" %}'>
+    {%endblock%}
+    {% block load_local_css%}
+    {%endblock%}
+</head>
+<body>
+<div>
+
+
+<header>
+    <div id="header" calss="header">
+        <nav id="first_page">
+            <a href="{% url 'index' %}">صفحه اصلی</a>   
+        </nav>
+        <p>
+            <h1 id="head_name">
+                فروشگاه اینترنتی شکلاتی
+            </h1>
+        </p>
+        <nav id="cart">
+        <a href="{% url 'show_cart' %}"> سبد: موجودی {{ cart_item_count }} محصول</a>
+        </nav> 
+        <p><br></p>
+    </div>  
+</header>
+
+
+
+{% block content %}
+
+{% endblock %}
+
+<footer>
+    
+    <div id="footer">
+        <h2>
+            ارتباط با ما
+        </h2>
+        
+        <nav >
+            <a href="" id="instagram">
+                <img src="{% static 'ecommerce_app/instagram.png' %}" id="icon">
+            </a>   
+        </nav>
+        <nav >
+            <a href="" id="telegram">
+                <img src="{% static 'ecommerce_app/telegram.png' %}" id="icon">
+            </a>   
+        </nav>
+
+    </div>
+    
+</footer>
+
+</div>
+</body>
+</html>

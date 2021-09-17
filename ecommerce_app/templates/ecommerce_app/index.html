@@ -1,0 +1,27 @@
+{% extends 'ecommerce_app/base.html' %}
+{% load static%}
+{% load humanize %}
+
+{% block load_local_css%}
+    <link rel='stylesheet' href='{% static "ecommerce_app/index.css" %}'>
+{%endblock%}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <h2>محصولات موجود</h2>
+            <hr>
+            <div class="grid-container" id="grid_index">
+                {% for product in all_products %}
+                        <a href="{% url 'product_detail' product.pk product.slug %}" id="products">
+                            <img src="{{product.image.url}}" >
+                            <h3>{{ product.name }}</h3>
+                            <h4>ريال {{ product.price|intcomma }}</h4>
+                        </a>   
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

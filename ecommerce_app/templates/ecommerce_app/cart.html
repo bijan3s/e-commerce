@@ -1,0 +1,83 @@
+{% extends 'ecommerce_app/base.html' %}
+{% load static%}
+{% load humanize %}
+
+
+{% block title %}
+    سبد خرید |
+{% endblock %}
+
+
+{% block load_local_css%}
+    <link rel='stylesheet' href='{% static "ecommerce_app/cart.css" %}'>
+{%endblock%}
+
+{% block content %}
+
+    <h2>سبد خرید</h2>
+    
+    {% if cart_item_count %}
+    <table id="cart_table">
+        <thead>
+        <tr>
+            <th>محصول</th>
+            <th>(ريال) قیمت</th>
+            <th>تعداد</th>
+            <th></th>
+            <th></th>
+            
+            <th>(ريال) هزینه هر محصول</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in cart_items %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td style="padding-left:20px;padding-right:20px"> {{ item.price|intcomma }}</td>
+                
+                <td>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <input type="text" name="quantity" value="{{ item.quantity }}">
+                        <input type="hidden" name="item_id" value="{{ item.id }}">
+                </td>
+                <td>
+                        <input type="submit" name="submit" value="تغییر">
+                    </form>
+                </td>
+                <td>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="item_id" value="{{ item.id }}">
+                        <input type="submit" name="submit" value="حذف">
+                    </form>
+                </td>
+                <td style="padding-left:20px;padding-right:20px;text-align: center;">{{ item.total_cost|intcomma }} </td>
+                
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                
+                <td colspan="5" style="text-align: right;padding-right:20px"><h4>(ریال) هزینه کل سبد </h4></td>
+                <td style="padding-left:20px;padding-right:20px;text-align: center">{{ cart_subtotal|intcomma }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="4" style="text-align: right">
+                    <a href="{% url 'index' %}" class="btn btn-primary">ادامه خرید</a>
+                </td>
+                {% if cart_item_count %}
+                    <td><a href="{% url 'checkout' %}" class="btn btn-primary">سفارش</a></td>
+                {% endif %}
+            </tr>
+        </tfoot>
+    </table>
+    {% else %}
+        <h2>:( سبد خالی است</h2>
+    {% endif %}
+
+
+{% endblock %}

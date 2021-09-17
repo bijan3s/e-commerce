@@ -1,0 +1,53 @@
+body{
+    text-align:center;
+}
+
+h2{
+    font-size:38px;
+
+}
+
+.grid-container {
+    direction:rtl;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 30px 50px;
+    
+  }
+
+  #grid_index a:link ,#grid_index a:visited{
+    background-color: #5e2e2000;
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 20px;
+    transition: transform 0.3s;
+  }
+  #grid_index a:hover,#grid_index a:active {
+    
+    background-color: #64352700;
+    transform: scale(1.05);
+  }
+
+  #grid_index img {  
+    width: 200px; 
+    height:135px;
+    border-radius: 20px;
+    } 
+
+  
+
+  #grid_index{
+      padding-top: 3%;
+      padding-left: 2%;
+      padding-right: 2%;
+  }
+
+  #grid_index a{
+    box-shadow:10px 10px 8px rgb(224, 224, 224);
+  }
+
+
+

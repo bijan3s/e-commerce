@@ -1,0 +1,25 @@
+
+h2{
+    font-size:34px;
+}
+h3{
+    font-size:28px;
+}
+p{
+    font-size: 24px;
+}
+.btn-primary {
+    background-color: #64352700;
+    border: none;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    text-decoration: none;
+    margin: 2px 2px;
+    cursor: pointer;
+    box-shadow:10px 10px 8px rgb(224, 224, 224);
+  }
+  input{
+    border-radius: 4px;
+    background-color: #f2f5f7;
+  }
